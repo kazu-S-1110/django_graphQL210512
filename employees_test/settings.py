@@ -91,7 +91,7 @@ DATABASES = {
     }
 }
 
-GRAPHENE = {"SCHEMA": "employees.schema.schema",
+GRAPHENE = {"SCHEMA": "employees_test.schema.schema",
             "MIDDLEWARE": [
                 "graphql_jwt.middleware.JSONWebTokenMiddleware",
             ],
