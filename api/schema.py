@@ -16,3 +16,25 @@ class EmployeeNode(DjangoObjectType):
             "department__dept_name": ["icontains"]
         }
         interfaces = (relay.Node,)
+
+
+class DepartmentNode(DjangoObjectType):
+    class Meta:
+        model = Department
+        filter_fields = {
+            "employees": ["exact"],
+            "dept_name": ["exact"]
+        }
+        interfaces = (relay.Node,)
+
+
+class Query(graphene.ObjectType):
+    employee = graphene.Field(EmployeeNode, id=graphene.NonNull(graphene.ID))
+    all_employees = DjangoFilterConnectionField(EmployeeNode)
+    all_departments = DjangoFilterConnectionField(DepartmentNode)
+
+    @login_required  ##これでjwtの認証がつく。
+    def resolve_employee(self, info, **kwargs):
+        id = kwargs.get("id")
+        if id is not None:
+            return Employee.objects.get(id=from_global_id(id)[1])
