@@ -53,7 +53,7 @@ class DeptDeleteMutation(relay.ClientIDMutation):
     @login_required
     def mutate_and_get_payload(root, info, **input):
         department = Department(
-            id=from_global_id(input.get("id")[1])
+            id=from_global_id(input.get("id"))[1]
         )
         department.delete()
 
