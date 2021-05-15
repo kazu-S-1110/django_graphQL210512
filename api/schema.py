@@ -73,7 +73,7 @@ class EmployeeCreateMutation(relay.ClientIDMutation):
         employee = Employee(
             name=input.get("name"),
             join_year=input.get("join_year"),
-            department_id=from_global_id(input.get("department")[1])
+            department_id=from_global_id(input.get("department"))[1]
         )
         employee.save()
 
