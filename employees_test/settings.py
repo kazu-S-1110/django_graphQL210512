@@ -25,7 +25,7 @@ SECRET_KEY = 'sn_)(r05!v5q%365j8y9^5t9yjxh67qt^a9me422bbj2)y5_#!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["react-graphql210516.herokuapp.com"]
 
 # Application definition
 
