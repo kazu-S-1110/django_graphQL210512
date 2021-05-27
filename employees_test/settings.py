@@ -25,7 +25,7 @@ SECRET_KEY = 'sn_)(r05!v5q%365j8y9^5t9yjxh67qt^a9me422bbj2)y5_#!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["react-graphql210516.herokuapp.com"]
+ALLOWED_HOSTS = ["react-graphql210516.herokuapp.com","react-graphql210516.vercel.app"]
 
 # Application definition
 
@@ -58,7 +58,8 @@ GRAPHQL_JWT = {
 }
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://react-graphql210516.vercel.app"
 ]
 
 ROOT_URLCONF = 'employees_test.urls'
